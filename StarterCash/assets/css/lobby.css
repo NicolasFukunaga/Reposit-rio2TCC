@@ -1,0 +1,118 @@
+/* ======== FUNDO E LAYOUT GERAL ======== */
+body {
+  background: radial-gradient(circle at top, #0a0a1a 0%, #050511 100%);
+  color: #fff;
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+}
+
+/* ======== AVATAR FRAME ======== */
+.avatar-frame {
+  position: fixed;
+  top: 45px; /* Espaço para o header */
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 90px);
+  border: none;
+  background: transparent;
+  z-index: 1;
+}
+
+/* ======== NOME DO AVATAR ======== */
+.avatar-nome {
+  position: fixed;
+  top: 85px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 0 18px #7b2ff7;
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.avatar-nome:hover {
+  transform: translateX(-50%) scale(1.05);
+  text-shadow: 0 0 22px #9d4edd;
+}
+
+/* ======== MODAL DE EDIÇÃO DE NOME ======== */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 25, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+/* Só aparece quando o JS adiciona a classe "show" */
+.overlay.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal {
+  background: #161631;
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  text-align: center;
+  width: 90%;
+  max-width: 480px;
+  box-shadow: 0 0 40px rgba(120, 0, 255, 0.5);
+  border: 2px solid rgba(124, 58, 237, 0.5);
+}
+
+.modal-nome-logo {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #ffffff;
+  font-weight: 800;
+  text-shadow: 0 0 12px #7c3aed;
+}
+
+.modal input {
+  width: 100%;
+  padding: 1.2rem;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  outline: none;
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 1.4rem;
+  text-align: center;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.modal input:focus {
+  border-color: #a855f7;
+  box-shadow: 0 0 15px #a855f7;
+}
+
+/* ======== BOTÃO PRINCIPAL ======== */
+/* ======== BOTÃO DE LOGOUT ======== */
+.logout-btn {
+  background: linear-gradient(90deg, #7b2ff7, #f107a3);
+  color: #fff;
+  padding: 0.6rem 1.4rem;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-left: 1rem;
+}
+
+.logout-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 18px rgba(124, 58, 237, 0.6);
+}
+
